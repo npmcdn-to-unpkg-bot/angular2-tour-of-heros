@@ -12,7 +12,7 @@ import { HeroDetailComponent } from './hero-detail.component';
   directives: [HeroDetailComponent]
 })
 export class HeroesComponent implements OnInit {
-  heroes: Hero[];
+  heroes: Hero[] = [];
   selectedHero: Hero;
   addingHero = false;
   error: any;
@@ -22,10 +22,9 @@ export class HeroesComponent implements OnInit {
     private heroService: HeroService) { }
 
   getHeroes() {
-    this.heroService
-        .getHeroes()
-        .then(heroes => this.heroes = heroes)
-        .catch(error => this.error = error);
+    this.heroService.getHeroes().subscribe(response => this.heroes = response.json().heros);
+
+
   }
 
   addHero() {

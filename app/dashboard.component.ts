@@ -21,8 +21,12 @@ export class DashboardComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.heroService.getHeroes()
-      .then(heroes => this.heroes = heroes.slice(1, 5));
+  this.heroService.getHeroes().subscribe(response => for(let hero of response.json()){
+  this.heroes.push(new Hero(hero.id, hero.name));
+  console.log('hero9999', hero)
+  });
+
+
   }
 
   gotoDetail(hero: Hero) {

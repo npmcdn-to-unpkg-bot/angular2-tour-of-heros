@@ -18,7 +18,7 @@ import './rxjs-extensions';
   styleUrls: ['app/app.component.css'],
   directives: [ROUTER_DIRECTIVES],
   providers: [
-    HeroService,
+    HeroService
   ]
 })
 export class AppComponent {
