@@ -7,10 +7,7 @@ export class HeroService {
   private heroesUrl = 'app/heroes';  // URL to web api
   constructor(private http: Http) { }
   getHeroes() {
-    return this.http.get(this.heroesUrl)
-               .toPromise()
-               .then(response => response.json().data as Hero[])
-               .catch(this.handleError);
+    return this.http.get('http://localhost:3001/heros.json')
   }
   getHero(id: number) {
     return this.getHeroes()

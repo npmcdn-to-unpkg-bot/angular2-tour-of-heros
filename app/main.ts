@@ -20,7 +20,7 @@ bootstrap(AppComponent, [
 bootstrap(AppComponent, [
     appRouterProviders,
     HTTP_PROVIDERS,
-    { provide: XHRBackend, useClass: InMemoryBackendService }, // in-mem server
+  //  { provide: XHRBackend, useClass: InMemoryBackendService }, // in-mem server
     { provide: SEED_DATA, useClass: InMemoryDataService }      // in-mem server data
 ]);
 
